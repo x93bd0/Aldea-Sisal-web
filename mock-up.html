@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aldea Sisal | Terrenos Residenciales en la Costa de Yucatán</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --sand:#E8E0D4;
+  --ivory:#F8F6F1;
+  --forest:#4F6655;
+  --ocean:#22343A;
+  --charcoal:#2A2A2A;
+  --max:1280px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--ivory);
+  color:var(--charcoal);
+  line-height:1.7;
+}
+
+.container{
+  width:min(92%,var(--max));
+  margin:auto;
+}
+
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  backdrop-filter:blur(12px);
+  background:rgba(248,246,241,.75);
+  border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.nav-inner{
+  height:80px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;
+  letter-spacing:.05em;
+}
+
+.menu{
+  display:flex;
+  gap:2rem;
+}
+
+.menu a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.hero{
+  height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  color:white;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+  linear-gradient(
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.35)
+  ),
+  url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+  center/cover;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:700px;
+}
+
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,8vw,6rem);
+  line-height:1;
+  margin-bottom:1rem;
+}
+
+.hero p{
+  font-size:1.15rem;
+  max-width:600px;
+}
+
+.hero-buttons{
+  margin-top:2rem;
+  display:flex;
+  gap:1rem;
+}
+
+.btn{
+  padding:1rem 1.5rem;
+  text-decoration:none;
+  border-radius:999px;
+  transition:.3s;
+}
+
+.btn-primary{
+  background:white;
+  color:black;
+}
+
+.btn-secondary{
+  border:1px solid white;
+  color:white;
+}
+
+section{
+  padding:120px 0;
+}
+
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;
+  margin-bottom:2rem;
+}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5rem;
+  align-items:center;
+}
+
+.image-block img{
+  width:100%;
+  border-radius:24px;
+}
+
+.stats{
+  background:var(--ocean);
+  color:white;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:2rem;
+}
+
+.stat{
+  text-align:center;
+}
+
+.stat h3{
+  font-size:3rem;
+  font-family:'Cormorant Garamond',serif;
+}
+
+.locations{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:2rem;
+}
+
+.location-card{
+  padding:2rem;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:18px;
+}
+
+.amenities{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+}
+
+.amenity{
+  background:white;
+  padding:1.5rem;
+  border-radius:18px;
+  border:1px solid rgba(0,0,0,.06);
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+}
+
+.gallery img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
+  border-radius:18px;
+}
+
+.cta{
+  background:var(--forest);
+  color:white;
+  text-align:center;
+}
+
+footer{
+  padding:3rem 0;
+  text-align:center;
+}
+
+@media(max-width:900px){
+
+  .grid-2,
+  .stats-grid,
+  .locations,
+  .amenities,
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .menu{
+    display:none;
+  }
+
+  .section-title{
+    font-size:3rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">Aldea Sisal</div>
+
+    <div class="menu">
+      <a href="#proyecto">Proyecto</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#amenidades">Amenidades</a>
+      <a href="#inversion">Inversión</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-content">
+
+    <h1>
+      Inversión real
+      en la costa
+      de Yucatán
+    </h1>
+
+    <p>
+      Terrenos residenciales ubicados a minutos de Sisal,
+      uno de los destinos más emblemáticos de la costa
+      yucateca.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#proyecto" class="btn btn-primary">
+        Explorar
+      </a>
+
+      <a href="#contacto" class="btn btn-secondary">
+        Solicitar información
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<section id="proyecto">
+  <div class="container grid-2">
+
+    <div class="image-block">
+      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
+    </div>
+
+    <div>
+      <h2 class="section-title">
+        Sisal
+      </h2>
+
+      <p>
+        Pueblo Mágico de la costa yucateca, reconocido por
+        sus playas, tranquilidad y entorno natural.
+      </p>
+
+      <br>
+
+      <p>
+        Aldea Sisal se desarrolla dentro del municipio de
+        Hunucmá y aprovecha la cercanía con uno de los
+        corredores costeros más atractivos del estado.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="stats">
+
+  <div class="container">
+
+    <div class="stats-grid">
+
+      <div class="stat">
+        <h3>16</h3>
+        <p>hectáreas verdes</p>
+      </div>
+
+      <div class="stat">
+        <h3>20+</h3>
+        <p>amenidades</p>
+      </div>
+
+      <div class="stat">
+        <h3>1400+</h3>
+        <p>inversionistas</p>
+      </div>
+
+      <div class="stat">
+        <h3>8 km</h3>
+        <p>de Sisal</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="ubicacion">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Ubicación
+    </h2>
+
+    <div class="locations">
+
+      <div class="location-card">
+        <h3>Sisal</h3>
+        <p>8 km</p>
+      </div>
+
+      <div class="location-card">
+        <h3>Hunucmá</h3>
+        <p>9.7 km</p>
+      </div>
+
+      <div class="location-card">
+        <h3>Mérida</h3>
+        <p>36.6 km</p>
+      </div>
+
+      <div class="location-card">
+        <h3>Aeropuerto</h3>
+        <p>47.4 km</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="amenidades">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Amenidades
+    </h2>
+
+    <div class="amenities">
+
+      <div class="amenity">Casa Club</div>
+      <div class="amenity">Lago Artificial</div>
+      <div class="amenity">Alberca</div>
+      <div class="amenity">Parque Central</div>
+
+      <div class="amenity">Área Zen</div>
+      <div class="amenity">Yoga</div>
+      <div class="amenity">Pet Park</div>
+      <div class="amenity">Cancha de Futbol</div>
+
+      <div class="amenity">Hamacas</div>
+      <div class="amenity">Cine al Aire Libre</div>
+      <div class="amenity">Áreas Verdes</div>
+      <div class="amenity">Ciclovías</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Galería
+    </h2>
+
+    <div class="gallery">
+
+      <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e">
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="inversion" class="cta">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Descubre Aldea Sisal
+    </h2>
+
+    <p>
+      Solicita información actualizada sobre disponibilidad,
+      financiamiento y etapas del desarrollo.
+    </p>
+
+    <br><br>
+
+    <a class="btn btn-primary">
+      Hablar con un asesor
+    </a>
+
+  </div>
+
+</section>
+
+<footer id="contacto">
+  <p>
+    © Aldea Sisal — Maqueta conceptual basada en información pública.
+  </p>
+</footer>
+
+</body>
+</html>
